@@ -5,7 +5,7 @@
 - **Name:** Erik
 - **What to call them:** 
 - **Pronouns:** *(optional)*
-- **Timezone:** 
+- **Timezone:** Usually Europe/Stockholm (Sweden); currently Colombia (America/Bogota)
 - **Notes:** 
 
 ## Context
