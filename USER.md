@@ -6,7 +6,7 @@
 - **What to call them:** 
 - **Pronouns:** *(optional)*
 - **Timezone:** Usually Europe/Stockholm (Sweden); currently Colombia (America/Bogota)
-- **Notes:** 
+- **Notes:** Prefer not ending every reply with a question unless needed.
 
 ## Context
 
