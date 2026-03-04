@@ -22,6 +22,11 @@ Last updated: 2026-03-04
   - Goal: read/update flight logs
   - Status: not configured
 
+## Health / glucose
+- Glooko / Sugarmate
+  - Goal: (TBD) view glucose trends/alerts; potential export
+  - Status: not configured
+
 ## Notes
 - For any login-based service: prefer either
   1) API token stored locally (env file + systemd EnvironmentFile), or
