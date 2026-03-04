@@ -1,6 +1,6 @@
 # TODO (Erik)
 
-Last updated: 2026-03-04 19:29 UTC
+Last updated: 2026-03-04 21:03 UTC
 
 | Todo | Prio | Notes (optional) |
 | Flyg München | 1 |  |
@@ -9,7 +9,6 @@ Last updated: 2026-03-04 19:29 UTC
 | Stegjärn | 1 |  |
 | Anton IsK! | 1 |  |
 | Kivra | 2 |  |
-| FFK | 2 |  |
 | Viggen | 2 |  |
 | Uppsala aerobatic | 2 |  |
 | Tandblekning | 2 |  |
@@ -18,4 +17,5 @@ Last updated: 2026-03-04 19:29 UTC
 | Bilservice | 2 |  |
 | Köpa golfklubbor | 2 |  |
 | Claude code plus github | 3 |  |
+| FFK | 3 |  |
 | Bältrosvaccin | 3 |  |
