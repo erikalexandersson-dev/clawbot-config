@@ -10,6 +10,7 @@ Purpose: during each OpenClaw heartbeat, check Gmail and notify Erik.
 - Martin på Handelsbanken
 - KSSS
 - Erikssons automekanik
+- Uppsala Aerobatic Club (skolning@uppsalaaerobatic.se)
 
 ## Notes / next refinements
 - Add exact matching rules (from email addresses, domains, subject keywords).
