@@ -1,6 +1,6 @@
 # TODO (Erik)
 
-Last updated: 2026-03-04
+Last updated: 2026-03-04 15:00 UTC
 
 | Todo | Important | Urgent | Notes (optional) |
 |---|:---:|:---:|---|
@@ -18,8 +18,6 @@ Last updated: 2026-03-04
 | Bältrosvaccin |  |  |  |
 | Bygga bollgrej |  |  |  |
 | TSK medlemskap |  |  |  |
-| Beställa Ozone? |  |  |  |
 | Flyg Oslo |  |  |  |
 | Dubbelkolla att jag fått tillbaka för hyrbilen |  |  |  |
-| Al verktyg |  |  |  |
 | Flyg München |  |  |  |
