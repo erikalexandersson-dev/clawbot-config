@@ -1,6 +1,6 @@
 # TODO (Erik)
 
-Last updated: 2026-03-04 15:27 UTC
+Last updated: 2026-03-04 18:20 UTC
 
 | Todo | Prio | Notes (optional) |
 | Flyg München | 1 |  |
@@ -15,5 +15,6 @@ Last updated: 2026-03-04 15:27 UTC
 | Tandblekning | 2 |  |
 | Bygga bollgrej | 2 |  |
 | Dubbelkolla att jag fått tillbaka för hyrbilen | 2 |  |
+| Bilservice | 2 |  |
 | Claude code plus github | 3 |  |
 | Bältrosvaccin | 3 |  |
