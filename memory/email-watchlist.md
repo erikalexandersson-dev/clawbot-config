@@ -3,9 +3,9 @@
 Purpose: during each OpenClaw heartbeat, check Gmail and notify Erik.
 
 ## Mode
-- ✅ Alert on **all new mail from now** (not just specific senders)
+- ✅ Alert only on **watchlist matches** (not all mail)
 
-## Priority senders / topics (extra highlight)
+## Watchlist (senders / topics)
 - Täby Sjöflygklubb
 - Martin på Handelsbanken
 - KSSS
