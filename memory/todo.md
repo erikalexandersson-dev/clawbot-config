@@ -1,6 +1,6 @@
 # TODO (Erik)
 
-Last updated: 2026-03-04 15:11 UTC
+Last updated: 2026-03-04 15:13 UTC
 
 | Todo | Prio | Notes (optional) |
 |---|:---:|---|
@@ -14,7 +14,7 @@ Last updated: 2026-03-04 15:11 UTC
 | Viggen | 2 |  |
 | Uppsala aerobatic | 2 |  |
 | Tandblekning | 2 |  |
-| Claude code plus github | 3 |  |
-| Bältrosvaccin | 3 |  |
 | Bygga bollgrej | 2 |  |
 | Dubbelkolla att jag fått tillbaka för hyrbilen | 2 |  |
+| Claude code plus github | 3 |  |
+| Bältrosvaccin | 3 |  |
