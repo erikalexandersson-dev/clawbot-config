@@ -1,12 +1,12 @@
 # TODO (Erik)
 
-Last updated: 2026-03-04 15:08 UTC
+Last updated: 2026-03-04 15:11 UTC
 
 | Todo | Prio | Notes (optional) |
 |---|:---:|---|
-| Flyg München | 1 | tidskritisk |
-| Flyg Oslo | 1 | tidskritisk |
-| KSSS medlemskap | 1 | tidskritisk |
+| Flyg München | 1 |  |
+| Flyg Oslo | 1 |  |
+| KSSS medlemskap | 1 |  |
 | Kivra | 2 |  |
 | FFK | 2 |  |
 | Stegjärn | 2 |  |
