@@ -11,6 +11,8 @@ Purpose: during each OpenClaw heartbeat, check Gmail and notify Erik.
 - KSSS
 - Erikssons automekanik
 - Uppsala Aerobatic Club (skolning@uppsalaaerobatic.se)
+- Michael Käll (michael.kall1984@gmail.com)
+- Skysport
 
 ## Notes / next refinements
 - Add exact matching rules (from email addresses, domains, subject keywords).
