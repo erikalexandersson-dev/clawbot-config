@@ -9,7 +9,8 @@ Last updated: 2026-03-04
 | Stegjärn |  |  |  |
 | Anton IsK! |  |  |  |
 | Anton bank ID |  |  |  |
-| Viggen Uppsala aerobatic |  |  |  |
+| Viggen |  |  |  |
+| Uppsala aerobatic |  |  |  |
 | Tandblekning |  |  |  |
 | Claude code plus github |  |  |  |
 | KSSS medlemskap |  |  |  |
