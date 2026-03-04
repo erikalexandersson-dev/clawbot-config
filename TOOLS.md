@@ -43,6 +43,9 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ### Messaging Channels
 - Telegram — bot, pairing mode (JP, Erik, Nils approved) *(per example list)*
+
+### Telegram handles / contacts
+- JP (John Patrick Berlips) — @JohnPatrickBerlips (seen in forwarded message, 2026-02-12)
 - WhatsApp — (example list mentioned link to +46708979717; treat as **NOT Erik’s**)
 - Discord — @Clawbot in “civic coders” + another guild
 
@@ -72,3 +75,9 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - erik-dev-flapping — disabled
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+### Secrets handling (local convention)
+- Cloudflare API token file location on host: `/root/.openclaw/secrets.env`
+- Fallback/legacy location seen: `/root/.openclaw/cloudflare.env`
+- Never store raw secrets in chat logs, MEMORY.md, or committed repo files.
+- Store only paths + procedure notes here, not token values.
