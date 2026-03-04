@@ -1,8 +1,11 @@
-# Email watchlist (heartbeat alerts)
+# Gmail heartbeat alerts
 
-Purpose: during each OpenClaw heartbeat, check Gmail for messages from these senders and notify Erik.
+Purpose: during each OpenClaw heartbeat, check Gmail and notify Erik.
 
-## Current watchlist
+## Mode
+- ✅ Alert on **all new mail from now** (not just specific senders)
+
+## Priority senders / topics (extra highlight)
 - Täby Sjöflygklubb
 - Martin på Handelsbanken
 - KSSS
@@ -10,5 +13,5 @@ Purpose: during each OpenClaw heartbeat, check Gmail for messages from these sen
 
 ## Notes / next refinements
 - Add exact matching rules (from email addresses, domains, subject keywords).
-- Decide whether to alert on *any* mail or only `is:unread`.
-- Optionally keep last-seen Gmail `historyId` or timestamp to avoid repeat alerts.
+- Decide whether alerts should include only `is:unread` (default) or also already-read.
+- Use Gmail History API for exact “since last check” (instead of date-based queries).

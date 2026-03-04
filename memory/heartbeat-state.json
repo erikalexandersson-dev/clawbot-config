@@ -1,8 +1,13 @@
 {
   "lastChecks": {
-    "gmail_watch": null
+    "gmail_watch": 1772629286.6097584
   },
   "gmail_watch": {
-    "lastNotifiedMessageIds": []
+    "mode": "all_new_unread",
+    "lastNotifiedMessageIds": [
+      "19cb78b3b6e08953",
+      "19cad8f5d5e5e26e",
+      "19cb87e43ee51580"
+    ]
   }
 }

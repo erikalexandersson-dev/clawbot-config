@@ -2,9 +2,9 @@
 
 # Heartbeat tasks (run periodically).
 
-## Gmail watch (important senders)
-- Check Gmail for new messages from watchlist senders in `memory/email-watchlist.md`.
-- Alert Erik on Telegram if any match since last heartbeat check.
-- If match: include sender + subject + received time.
+## Gmail watch (all new mail + priority highlight)
+- Check Gmail for **all new mail since last heartbeat check**.
+- Default: alert on `is:unread` to avoid noise.
+- Always include: sender + subject + received time.
+- Also “highlight” if it matches any priority senders/topics listed in `memory/email-watchlist.md`.
 - Avoid duplicate alerts: track last check time + last seen thread/message ids in `memory/heartbeat-state.json`.
-
