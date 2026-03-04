@@ -1,5 +1,10 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+# Heartbeat tasks (run periodically).
 
-# Add tasks below when you want the agent to check something periodically.
+## Gmail watch (important senders)
+- Check Gmail for new messages from watchlist senders in `memory/email-watchlist.md`.
+- Alert Erik on Telegram if any match since last heartbeat check.
+- If match: include sender + subject + received time.
+- Avoid duplicate alerts: track last check time + last seen thread/message ids in `memory/heartbeat-state.json`.
+
