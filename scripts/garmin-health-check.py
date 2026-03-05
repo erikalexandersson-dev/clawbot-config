@@ -22,8 +22,13 @@ class GarminClient:
 
     def connect(self, tokens_dir: str) -> None:
         garth.resume(tokens_dir)
+        # Profile endpoint is not always available; derive from recent activity as fallback.
         profile = self._get("/userprofile-service/userprofile") or {}
         self.display_name = profile.get("displayName")
+        if not self.display_name:
+            acts = self._get("/activitylist-service/activities/search/activities?start=0&limit=1") or []
+            if isinstance(acts, list) and acts:
+                self.display_name = acts[0].get("ownerDisplayName")
 
     def _get(self, endpoint: str) -> Any:
         try:
@@ -71,7 +76,7 @@ def main() -> int:
     daily = c.get_with_display_name(
         "/wellness-service/wellness/dailySummaryChart/{display_name}?date={date}"
         .replace("{date}", ds)
-    ) or {}
+    ) or []
 
     sleep = c.get_with_display_name(
         "/wellness-service/wellness/dailySleepData/{display_name}?date={date}".replace("{date}", ds)
@@ -81,6 +86,7 @@ def main() -> int:
         "/wellness-service/wellness/dailyHeartRate/{display_name}?date={date}".replace("{date}", ds)
     ) or {}
 
+    # Some Garmin accounts return 404 for these endpoints; keep graceful fallback.
     stress = c.get_with_display_name(
         "/wellness-service/wellness/dailyStress/{display_name}?date={date}".replace("{date}", ds)
     ) or {}
@@ -100,6 +106,20 @@ def main() -> int:
     ) or []
 
     # Normalize a compact output structure (keys may vary by account/device)
+    total_steps = None
+    if isinstance(daily, list) and daily:
+        try:
+            total_steps = sum((item or {}).get("steps", 0) for item in daily)
+        except Exception:
+            total_steps = None
+
+    heart_values = val(hr, "heartRateValues")
+    min_hr = None
+    if isinstance(heart_values, list) and heart_values:
+        nums = [x for x in heart_values if isinstance(x, (int, float)) and x > 0]
+        if nums:
+            min_hr = min(nums)
+
     out = {
         "date": ds,
         "profile": {"display_name": c.display_name},
@@ -109,25 +129,25 @@ def main() -> int:
             "deep_sec": val(sleep, "dailySleepDTO", "deepSleepSeconds"),
             "light_sec": val(sleep, "dailySleepDTO", "lightSleepSeconds"),
             "rem_sec": val(sleep, "dailySleepDTO", "remSleepSeconds"),
-            "avg_hr": val(sleep, "dailySleepDTO", "averageRespiration") or val(sleep, "dailySleepDTO", "avgSleepHr"),
+            "avg_hr": val(sleep, "dailySleepDTO", "avgSleepHr"),
             "spo2_avg": val(sleep, "dailySleepDTO", "averageSpO2"),
             "stress_avg": val(sleep, "dailySleepDTO", "avgSleepStress"),
         },
         "heart_rate": {
-            "resting": val(daily, "rhr") or val(hr, "restingHeartRate"),
-            "min": val(hr, "heartRateValuesArray", 0, 1) if isinstance(val(hr, "heartRateValuesArray"), list) else None,
-            "max": val(daily, "maxHeartRate") or val(hr, "maxHeartRate"),
+            "resting": val(hr, "restingHeartRate"),
+            "min": min_hr,
+            "max": val(hr, "maxHeartRate"),
         },
         "hrv": {
-            "status": val(hrv, "status"),
-            "last_night_avg": val(hrv, "lastNightAvg"),
+            "status": val(hrv, "status") or val(sleep, "hrvStatus"),
+            "last_night_avg": val(hrv, "lastNightAvg") or val(sleep, "avgOvernightHrv"),
             "weekly_avg": val(hrv, "weeklyAvg"),
         },
         "stress": {
-            "avg": val(daily, "averageStressLevel") or val(stress, "avgStressLevel"),
-            "max": val(daily, "maxStressLevel") or val(stress, "maxStressLevel"),
+            "avg": val(stress, "avgStressLevel"),
+            "max": val(stress, "maxStressLevel"),
         },
-        "steps": val(daily, "steps") or val(daily, "totalSteps"),
+        "steps": total_steps,
         "spo2": {
             "avg": val(pulse_ox, "averageSpO2"),
             "lowest": val(pulse_ox, "lowestSpO2"),
