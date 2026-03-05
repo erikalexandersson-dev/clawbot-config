@@ -1,6 +1,6 @@
 # TODO (Erik)
 
-Last updated: 2026-03-04 21:21 UTC
+Last updated: 2026-03-05 08:28 UTC
 
 | Todo | Prio | Notes (optional) |
 | Flyg München | 1 |  |
@@ -17,6 +17,7 @@ Last updated: 2026-03-04 21:21 UTC
 | Dubbelkolla att jag fått tillbaka för hyrbilen | 2 |  |
 | Bilservice | 2 |  |
 | Köpa golfklubbor | 2 |  |
+| Boka VO2max-mätning med JP | 2 |  |
 | Claude code plus github | 3 |  |
 | FFK | 3 |  |
 | Bältrosvaccin | 3 |  |
