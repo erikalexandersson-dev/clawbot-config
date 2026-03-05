@@ -6,7 +6,7 @@
 - **What to call them:** 
 - **Pronouns:** *(optional)*
 - **Timezone:** Europe/Stockholm by default unless otherwise specified
-- **Notes:** Prefer not ending every reply with a question unless needed.
+- **Notes:** Prefer not ending every reply with a question unless needed. When referring to ski sessions in that area, call it Ågesta (even if Garmin labels it Huddinge).
 
 ## Context
 
