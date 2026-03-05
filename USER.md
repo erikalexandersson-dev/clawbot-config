@@ -5,7 +5,7 @@
 - **Name:** Erik
 - **What to call them:** 
 - **Pronouns:** *(optional)*
-- **Timezone:** Usually Europe/Stockholm (Sweden); currently Colombia (America/Bogota)
+- **Timezone:** Europe/Stockholm by default unless otherwise specified
 - **Notes:** Prefer not ending every reply with a question unless needed.
 
 ## Context
