@@ -61,6 +61,9 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - ScraperAPI — web scraping
 - Open-Meteo — weather (no auth)
 
+### Integration TODOs
+- DALL·E image generation in OpenClaw: pending OpenAI API key from Erik, then configure + test end-to-end.
+
 ### Infrastructure
 - Proxmox LXC CT 510 on ax102-03-cluster1
 - Headless Chromium browser
