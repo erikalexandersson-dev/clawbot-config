@@ -86,18 +86,12 @@ def main() -> int:
         "/wellness-service/wellness/dailyHeartRate/{display_name}?date={date}".replace("{date}", ds)
     ) or {}
 
-    # Some Garmin accounts return 404 for these endpoints; keep graceful fallback.
-    stress = c.get_with_display_name(
-        "/wellness-service/wellness/dailyStress/{display_name}?date={date}".replace("{date}", ds)
-    ) or {}
+    # Stress/body battery endpoints on many accounts are date-based (no displayName).
+    stress = c._get(f"/wellness-service/wellness/dailyStress/{ds}") or {}
+    body_battery_events = c._get(f"/wellness-service/wellness/bodyBattery/events/{ds}") or []
 
-    body_battery = c.get_with_display_name(
-        "/wellness-service/wellness/dailyBodyBattery/{display_name}?date={date}".replace("{date}", ds)
-    ) or {}
-
-    pulse_ox = c.get_with_display_name(
-        "/wellness-service/wellness/dailyPulseOx/{display_name}?date={date}".replace("{date}", ds)
-    ) or {}
+    # PulseOx endpoint availability differs across accounts/devices; fallback to sleep-level SpO2.
+    pulse_ox = c._get(f"/wellness-service/wellness/dailyPulseOx/{ds}") or {}
 
     hrv = c._get(f"/wellness-service/wellness/hrvData?fromDate={week_ago}&toDate={ds}") or {}
 
@@ -116,9 +110,26 @@ def main() -> int:
     heart_values = val(hr, "heartRateValues")
     min_hr = None
     if isinstance(heart_values, list) and heart_values:
-        nums = [x for x in heart_values if isinstance(x, (int, float)) and x > 0]
+        nums: list[float] = []
+        for x in heart_values:
+            if isinstance(x, (int, float)) and x > 0:
+                nums.append(x)
+            elif isinstance(x, (list, tuple)) and len(x) > 1 and isinstance(x[1], (int, float)) and x[1] > 0:
+                nums.append(x[1])
         if nums:
             min_hr = min(nums)
+
+    bb_impact = None
+    bb_avg_stress = None
+    if isinstance(body_battery_events, list) and body_battery_events:
+        impacts = [val(e, "event", "bodyBatteryImpact") for e in body_battery_events]
+        impacts = [i for i in impacts if isinstance(i, (int, float))]
+        if impacts:
+            bb_impact = sum(impacts)
+        avg_stresses = [val(e, "averageStress") for e in body_battery_events]
+        avg_stresses = [s for s in avg_stresses if isinstance(s, (int, float))]
+        if avg_stresses:
+            bb_avg_stress = round(sum(avg_stresses) / len(avg_stresses), 1)
 
     out = {
         "date": ds,
@@ -153,10 +164,12 @@ def main() -> int:
             "lowest": val(pulse_ox, "lowestSpO2"),
         },
         "body_battery": {
-            "charged": val(body_battery, "chargedValue"),
-            "drained": val(body_battery, "drainedValue"),
-            "high": val(body_battery, "highValue"),
-            "low": val(body_battery, "lowValue"),
+            "charged": bb_impact,
+            "drained": None,
+            "high": None,
+            "low": None,
+            "events_count": len(body_battery_events) if isinstance(body_battery_events, list) else 0,
+            "avg_event_stress": bb_avg_stress,
         },
         "activities": activities if isinstance(activities, list) else activities.get("activities", []),
     }
