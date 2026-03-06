@@ -1,6 +1,6 @@
 # Integrations & logins to set up (backlog)
 
-Last updated: 2026-03-04
+Last updated: 2026-03-06
 
 ## Messaging
 - WhatsApp
@@ -24,8 +24,8 @@ Last updated: 2026-03-04
 
 ## Health / glucose
 - Glooko / Sugarmate
-  - Goal: (TBD) view glucose trends/alerts; potential export
-  - Status: not configured
+  - Goal: view glucose trends/alerts; potential export
+  - Status: Glooko login works via browser profile (`eu.my.glooko.com`, Summary/Graphs accessible); automation/reporting still to refine
 
 ## Image generation
 - DALL·E (OpenAI)
