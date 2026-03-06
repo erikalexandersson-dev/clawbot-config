@@ -31,6 +31,9 @@ Last updated: 2026-03-04
 - DALL·E (OpenAI)
   - Goal: generate images directly from chat prompts in OpenClaw
   - Status: pending OpenAI API key from Erik, then configure tool + run a test generation
+- Imgflip API
+  - Goal: generate memes from templates/captions directly via OpenClaw
+  - Status: added to backlog; pending API credentials + integration wiring/test
 
 ## Notes
 - For any login-based service: prefer either
