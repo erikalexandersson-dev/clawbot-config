@@ -14,6 +14,7 @@ Purpose: during each OpenClaw heartbeat, check Gmail and notify Erik.
 - Uppsala Aerobatic Club (skolning@uppsalaaerobatic.se)
 - Michael Käll (michael.kall1984@gmail.com)
 - Skysport
+- Keyword: "faktura" (match in subject/body)
 
 ## Dynamic rule: recent outbound replies (NEW)
 - Build a rolling 3-day recipient set from Erik's sent mail.
