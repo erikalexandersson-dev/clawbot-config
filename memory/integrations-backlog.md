@@ -33,7 +33,7 @@ Last updated: 2026-03-06
   - Status: pending OpenAI API key from Erik, then configure tool + run a test generation
 - Imgflip API
   - Goal: generate memes from templates/captions directly via OpenClaw
-  - Status: helper prepared (`scripts/imgflip-templates.py`) with live template fetch/search working without auth; pending credentials for actual `caption_image` generation and final wiring
+  - Status: auth verified (caption generation test succeeded); next step is final wiring into assistant flow + safe secret storage path
 
 ## Notes
 - For any login-based service: prefer either

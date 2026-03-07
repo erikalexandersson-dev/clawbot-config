@@ -9,11 +9,13 @@ Updated: 2026-03-07
 - Verified live API call:
   - `python3 scripts/imgflip-templates.py --search drake --top 5`
 
-## What remains (needs Erik input)
-- Credentials for image generation endpoint (`caption_image`):
-  - Imgflip username
-  - Imgflip password
+## Auth status
+- 2026-03-07: `caption_image` auth test succeeded (account verified).
 
-## Planned next step once creds exist
+## What remains
+- Final integration wiring for easy "make meme" requests in normal chat flow.
+- Safe secret storage path (avoid credentials in chat/history going forward).
+
+## Planned next step
 - Add script for caption generation (template id + text lines -> meme URL)
 - Wire into routine assistant flow for "make meme" requests
