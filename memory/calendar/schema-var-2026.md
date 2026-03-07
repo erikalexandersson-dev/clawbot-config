@@ -1,6 +1,7 @@
 # Veckoschema vår 2026 (familj)
 
 Senast uppdaterad: 2026-03-07
+Giltighet: fram till skolavslutningen (datum ej hittat i kalendern ännu).
 
 ## Måndag
 - T: ledig, hänger ofta i stallet.
