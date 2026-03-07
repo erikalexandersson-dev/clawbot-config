@@ -37,3 +37,4 @@ Curated long-term memory for Erik.
 ## Recent notable events
 - Garmin integration now reads Training Readiness via metrics endpoint (`/metrics-service/metrics/trainingreadiness/{date}`).
 - Used Swift 6 MS marketplace watcher is disabled because Erik ordered a new Swift 6.
+- Generated Telegram profile image candidate for Al and sent to Erik: `generated/al-profile-avatar.png`.
