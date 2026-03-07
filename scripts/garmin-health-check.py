@@ -95,6 +95,9 @@ def main() -> int:
 
     hrv = c._get(f"/wellness-service/wellness/hrvData?fromDate={week_ago}&toDate={ds}") or {}
 
+    # Training Readiness (Garmin Connect metrics service)
+    training_readiness = c._get(f"/metrics-service/metrics/trainingreadiness/{ds}") or []
+
     activities = c._get(
         f"/activitylist-service/activities/search/activities?start=0&limit={args.activities}"
     ) or []
@@ -154,6 +157,13 @@ def main() -> int:
             "last_night_avg": val(hrv, "lastNightAvg") or val(sleep, "avgOvernightHrv"),
             "weekly_avg": val(hrv, "weeklyAvg"),
         },
+        "training_readiness": {
+            "score": val(training_readiness[0], "score") if isinstance(training_readiness, list) and training_readiness else None,
+            "level": val(training_readiness[0], "level") if isinstance(training_readiness, list) and training_readiness else None,
+            "feedback_short": val(training_readiness[0], "feedbackShort") if isinstance(training_readiness, list) and training_readiness else None,
+            "recovery_time_h": val(training_readiness[0], "recoveryTime") if isinstance(training_readiness, list) and training_readiness else None,
+            "timestamp_local": val(training_readiness[0], "timestampLocal") if isinstance(training_readiness, list) and training_readiness else None,
+        },
         "stress": {
             "avg": val(stress, "avgStressLevel"),
             "max": val(stress, "maxStressLevel"),
@@ -201,6 +211,7 @@ def main() -> int:
         print(f"Sleep score: {sleep_score}")
         print(f"Resting HR: {rhr}")
         print(f"HRV status: {hrv_status}")
+        print(f"Training readiness: {out['training_readiness']['score']} ({out['training_readiness']['level']})")
         print(f"Steps: {out['steps']}")
         print(f"SpO2 avg/low: {out['spo2']['avg']} / {out['spo2']['lowest']}")
         print(f"Activities fetched: {len(out['activities']) if isinstance(out['activities'], list) else 0}")
