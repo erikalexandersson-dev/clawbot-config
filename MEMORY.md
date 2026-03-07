@@ -8,6 +8,7 @@ Curated long-term memory for Erik.
 - Birthday: 12 April.
 - Personal identity number (personnummer): 7904120313.
 - Mobile number: +46739388443.
+- Home address: Alviksvägen 243, 16765 Bromma, Sverige.
 - Communication preference: avoid ending every reply with a question unless needed.
 - Naming preference: when referring to local ski sessions in that area, call it **Ågesta** (even if Garmin labels it Huddinge).
 
