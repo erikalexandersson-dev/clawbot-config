@@ -11,6 +11,7 @@ Curated long-term memory for Erik.
 - Home address: Alviksvägen 243, 16765 Bromma, Sverige.
 - Communication preference: avoid ending every reply with a question unless needed.
 - Meme sending preference: when Erik asks to send a meme, send only the image (no extra comment text outside the meme image text).
+- API usage preference: use OpenAI API key only for DALL·E/image generation; use OAuth session for other OpenAI/chat usage.
 - Naming preference: when referring to local ski sessions in that area, call it **Ågesta** (even if Garmin labels it Huddinge).
 
 ## Ongoing routines
