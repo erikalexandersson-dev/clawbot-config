@@ -1,6 +1,6 @@
 # Integrations & logins to set up (backlog)
 
-Last updated: 2026-03-06
+Last updated: 2026-03-07
 
 ## Messaging
 - WhatsApp
@@ -30,10 +30,15 @@ Last updated: 2026-03-06
 ## Image generation
 - DALL·E (OpenAI)
   - Goal: generate images directly from chat prompts in OpenClaw
-  - Status: pending OpenAI API key from Erik, then configure tool + run a test generation
+  - Status: configured and tested successfully (`gpt-image-1` generation OK after credits top-up)
+  - Note: OpenAI API key should be used for DALL·E only; chat/model usage stays on OAuth session.
 - Imgflip API
   - Goal: generate memes from templates/captions directly via OpenClaw
   - Status: auth verified (caption generation test succeeded); next step is final wiring into assistant flow + safe secret storage path
+
+## Email domain (alexanderssons.org)
+- Forward Email DNS records configured (MX, verification TXT, DKIM, DMARC, SPF, autoconfig/autodiscover; CNAMEs set to DNS-only).
+- Remaining: set up outbound sending path (SMTP/API credentials) for `al@alexanderssons.org` so mail can actually be sent from that address.
 
 ## Notes
 - For any login-based service: prefer either
