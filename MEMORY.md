@@ -23,6 +23,7 @@ Curated long-term memory for Erik.
 
 ## Identity details
 - Citizenship: Swedish and Norwegian.
+- Public identity disambiguation: the "Distriktstandvården" Erik Alexandersson is Erik; other common-name search hits are not him.
 
 ## Assets & ownership
 - Owns sailing boat **S/Y Bounty** (Hanse 588).
