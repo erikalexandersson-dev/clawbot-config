@@ -6,6 +6,7 @@ Curated long-term memory for Erik.
 - Name: Erik Alexandersson.
 - Timezone default: Europe/Stockholm.
 - Birthday: 12 April.
+- Personal identity number (personnummer): 7904120313.
 - Communication preference: avoid ending every reply with a question unless needed.
 - Naming preference: when referring to local ski sessions in that area, call it **Ågesta** (even if Garmin labels it Huddinge).
 
