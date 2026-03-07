@@ -21,6 +21,9 @@ Curated long-term memory for Erik.
 - March is cross-country skiing season.
 - If calendar indicates Sydtyrolen or Jotunheimen: suggest topptur (fixed plan, substantial session).
 
+## Assets & ownership
+- Owns sailing boat **S/Y Bounty** (Hanse 588).
+
 ## Recent notable events
 - Garmin integration now reads Training Readiness via metrics endpoint (`/metrics-service/metrics/trainingreadiness/{date}`).
 - Used Swift 6 MS marketplace watcher is disabled because Erik ordered a new Swift 6.
