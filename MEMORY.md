@@ -21,6 +21,9 @@ Curated long-term memory for Erik.
 - March is cross-country skiing season.
 - If calendar indicates Sydtyrolen or Jotunheimen: suggest topptur (fixed plan, substantial session).
 
+## Identity details
+- Citizenship: Swedish and Norwegian.
+
 ## Assets & ownership
 - Owns sailing boat **S/Y Bounty** (Hanse 588).
 
