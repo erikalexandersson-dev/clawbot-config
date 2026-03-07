@@ -2,6 +2,14 @@
 
 Last updated: 2026-03-07
 
+## Working integrations (current)
+- Telegram channel: active (DM + approved groups)
+- Signal channel: active
+- Google Calendar via `gog`: active (create/update events works)
+- Garmin data pull: active (sleep/HRV/stress/steps/activities + training readiness endpoint)
+- DALL·E/OpenAI image generation: active (tested OK)
+- Imgflip API: active for caption generation (auth verified)
+
 ## Messaging
 - WhatsApp
   - Goal: (TBD) send/receive messages via OpenClaw
