@@ -26,6 +26,7 @@ Curated long-term memory for Erik.
 
 ## Assets & ownership
 - Owns sailing boat **S/Y Bounty** (Hanse 588).
+- Co-owns aircraft **Maule M5** with Thomas Hammar (registration **SE-KPX**).
 
 ## Recent notable events
 - Garmin integration now reads Training Readiness via metrics endpoint (`/metrics-service/metrics/trainingreadiness/{date}`).
