@@ -24,6 +24,7 @@ Curated long-term memory for Erik.
 ## Identity details
 - Citizenship: Swedish and Norwegian.
 - Instagram handle: `vattochtorrt`.
+- Family detail: Anton går i klass 7e.
 - Public identity disambiguation: the "Distriktstandvården" Erik Alexandersson is Erik; other common-name search hits are not him.
 
 ## Assets & ownership
