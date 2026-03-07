@@ -12,6 +12,7 @@ Curated long-term memory for Erik.
 - Communication preference: avoid ending every reply with a question unless needed.
 - Meme sending preference: when Erik asks to send a meme, send only the image (no extra comment text outside the meme image text).
 - API usage preference: use OpenAI API key only for DALL·E/image generation; use OAuth session for other OpenAI/chat usage.
+- Email sending rule: when Erik asks Al to send an email, default sender should be Erik's configured address (`al@alexanderssons.org`) unless Erik says otherwise.
 - Naming preference: when referring to local ski sessions in that area, call it **Ågesta** (even if Garmin labels it Huddinge).
 
 ## Ongoing routines
