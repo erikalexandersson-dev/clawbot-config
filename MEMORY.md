@@ -35,6 +35,19 @@ Curated long-term memory for Erik.
 - Owns sailing boat **S/Y Bounty** (Hanse 588).
 - Co-owns aircraft **Maule M5** with Thomas Hammar (registration **SE-KPX**).
 
+## Toppturer nära Sterzing (Sydtyrolen) – medelsvåra, 700–1300 hm
+Sökta 2026-03-09. Alla är klassade medium difficulty.
+
+- **Jaufental** – ~824 hm, 2:30 h. Nära Sterzing, bra halvdagstur.
+- **Ridnaun (Zunderspitze, 2331 m)** – ~1005 hm, 2:55 h. Start vid Maiern, via Gewingesalm. Populär.
+- **Ridnaun (variant)** – ~1019 hm, 2:55 h. Annan led i samma dal.
+- **Stuls/Stulles (Ratschings)** – ~1033 hm, 3:10 h. Lugnt och vackert.
+- **Stange (Ratschings / Ratschinger Kreuz, 2326 m)** – ~1213 hm, 3:51 h.
+- **Pflersch/Pflerschtal** – ~1267 hm, 4:55 h. Mot Brenner. Heldag.
+- **Pfitsch/Val di Vizze** – ~1266 hm, 3:58 h. Dal österut mot Österrike.
+
+Källa: suedtirol.info + ratschings.info
+
 ## Recent notable events
 - Garmin integration now reads Training Readiness via metrics endpoint (`/metrics-service/metrics/trainingreadiness/{date}`).
 - Used Swift 6 MS marketplace watcher is disabled because Erik ordered a new Swift 6.

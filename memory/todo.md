@@ -1,6 +1,6 @@
 # TODO (Erik)
 
-Last updated: 2026-03-06 14:31 UTC
+Last updated: 2026-03-09 10:39 UTC
 
 | Todo | Prio | Notes (optional) |
 | Flyg München | 1 |  |
@@ -9,14 +9,12 @@ Last updated: 2026-03-06 14:31 UTC
 | Stegjärn | 1 |  |
 | Köpa lavinkit | 3 |  |
 | Anton IsK! | 1 |  |
-| Beställa skor till Anton | 1 |  |
 | Kivra | 2 |  |
 | Viggen | 2 |  |
 | Uppsala aerobatic | 2 |  |
 | Tandblekning | 2 |  |
 | Bygga bollgrej | 2 |  |
 | Dubbelkolla att jag fått tillbaka för hyrbilen | 2 |  |
-| Bilservice | 2 |  |
 | Köpa golfklubbor | 3 |  |
 | Boka VO2max-mätning med JP | 2 |  |
 | Claude code plus github | 3 |  |
