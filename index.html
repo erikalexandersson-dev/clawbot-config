@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
       background: #0b1020;
@@ -16,29 +16,12 @@
     h1, h2 {
       margin-bottom: 0.4em;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
     .card {
       background: #151c33;
       border: 1px solid #2b3558;
       border-radius: 14px;
       padding: 18px;
-    }
-    .label {
-      color: #9fb0d9;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .value {
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .ok {
-      color: #7ee787;
+      margin-bottom: 20px;
     }
     .muted {
       color: #9fb0d9;
@@ -49,38 +32,55 @@
       border-radius: 12px;
       padding: 16px;
       overflow-x: auto;
+      white-space: pre-wrap;
       color: #d7e3ff;
     }
   </style>
 </head>
 <body>
   <h1>Clawbot Status</h1>
-  <p class="muted">En enkel översikt över hur min Clawbot är konfigurerad.</p>
+  <p class="muted">Automatiskt genererad status- och konfigurationsöversikt.</p>
 
-  <div class="grid">
-    <div class="card">
-      <div class="label">Server</div>
-      <div class="value">erik-dev</div>
-    </div>
-    <div class="card">
-      <div class="label">Default model</div>
-      <div class="value">openai-codex/gpt-5.4</div>
-    </div>
-    <div class="card">
-      <div class="label">Provider</div>
-      <div class="value">OpenAI Codex OAuth</div>
-    </div>
-    <div class="card">
-      <div class="label">Gateway</div>
-      <div class="value ok">Running</div>
-    </div>
+  <div class="card">
+    <h2>Models status</h2>
+    <pre>Config        : ~/.openclaw/openclaw.json
+Agent dir     : ~/.openclaw/agents/main/agent
+Default       : anthropic/claude-sonnet-4-6
+Fallbacks (1) : anthropic/claude-opus-4-6
+Image model   : -
+Image fallbacks (0): -
+Aliases (2)   : sonnet -> anthropic/claude-sonnet-4-6, opus -> anthropic/claude-opus-4-6
+Configured models (2): anthropic/claude-sonnet-4-6, anthropic/claude-opus-4-6
+
+Auth overview
+Auth store    : ~/.openclaw/agents/main/agent/auth-profiles.json
+Shell env     : off
+Providers w/ OAuth/tokens (1): anthropic (1)
+- anthropic effective=profiles:~/.openclaw/agents/main/agent/auth-profiles.json | profiles=1 (oauth=0, token=1, api_key=0) | anthropic:default=token:sk-ant-o...5OZkSAAA
+
+OAuth/token status
+- anthropic
+  - anthropic:default static</pre>
   </div>
 
-  <h2>Channels</h2>
-  <pre>Telegram
-Signal</pre>
+  <div class="card">
+    <h2>Channels</h2>
+    <pre>Chat channels:
+- Telegram default: configured, token=config, enabled
+- Signal default: configured, base=http://127.0.0.1:8080, enabled
 
-  <h2>Last updated</h2>
-  <pre id="updated">Manual update</pre>
+Auth providers (OAuth + API keys):
+- anthropic:default (token)
+
+Usage:
+  Claude: HTTP 429: Rate limited. Please try again later.
+
+Docs: https://docs.openclaw.ai/gateway/configuration</pre>
+  </div>
+
+  <div class="card">
+    <h2>Updated</h2>
+    <pre>2026-03-09 19:10:50</pre>
+  </div>
 </body>
 </html>
