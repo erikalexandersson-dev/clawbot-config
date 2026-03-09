@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clawbot Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #0b1020;
+      color: #e8edf7;
+    }
+    h1, h2 {
+      margin-bottom: 0.4em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      background: #151c33;
+      border: 1px solid #2b3558;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .label {
+      color: #9fb0d9;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .value {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .ok {
+      color: #7ee787;
+    }
+    .muted {
+      color: #9fb0d9;
+    }
+    pre {
+      background: #0f1528;
+      border: 1px solid #2b3558;
+      border-radius: 12px;
+      padding: 16px;
+      overflow-x: auto;
+      color: #d7e3ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Clawbot Status</h1>
+  <p class="muted">En enkel översikt över hur min Clawbot är konfigurerad.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Server</div>
+      <div class="value">erik-dev</div>
+    </div>
+    <div class="card">
+      <div class="label">Default model</div>
+      <div class="value">openai-codex/gpt-5.4</div>
+    </div>
+    <div class="card">
+      <div class="label">Provider</div>
+      <div class="value">OpenAI Codex OAuth</div>
+    </div>
+    <div class="card">
+      <div class="label">Gateway</div>
+      <div class="value ok">Running</div>
+    </div>
+  </div>
+
+  <h2>Channels</h2>
+  <pre>Telegram
+Signal</pre>
+
+  <h2>Last updated</h2>
+  <pre id="updated">Manual update</pre>
+</body>
+</html>
