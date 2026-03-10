@@ -41,6 +41,10 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 **Important:** The WhatsApp number **+46708979717 (JP)** shown in an earlier “Active Integrations” list was **an example**. **Do not send** messages from/to that number unless Erik explicitly requests it.
 
+### Google Calendar IDs
+- **Familjekalendern** ("Familjen") = `family03292761796431011196@group.calendar.google.com` — använd denna när Erik säger "gemensamma kalendern" eller "familjekalendern"
+- **Primär** = `erik.alexandersson@gmail.com`
+
 ### Messaging Channels
 - Telegram — bot, pairing mode (JP, Erik, Nils approved) *(per example list)*
 
