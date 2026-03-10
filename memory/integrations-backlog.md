@@ -17,10 +17,14 @@ Last updated: 2026-03-07
 
 ## Weather / aviation tools
 - Windy
-  - Goal: (TBD) forecasts/meteograms, wind layers, alerts
-  - Status: not configured
+  - Goal: point forecasts, wind data for locations (paragliding/sailing/aviation)
+  - Status: ✅ Active (2026-03-09) – API key i secrets.env (WINDY_API_KEY). Point Forecast API v2, modeller: gfs/ecmwf/iconEu. Fråga mig om vind/väder för valfri plats.
 
 ## Paragliding / XC
+- Meteo-Parapente
+  - Goal: termik- och paraglidingspecifika prognoser (BL-höjd, termikstyrka, XC-index)
+  - Status: inte konfigurerat
+  - URL: meteo-parapente.com
 - XContest
   - Goal: scrape/search flights, fetch stats; likely needs login for lists/search
   - Status: not configured (public detail pages only without login)
@@ -45,8 +49,7 @@ Last updated: 2026-03-07
   - Status: auth verified (caption generation test succeeded); next step is final wiring into assistant flow + safe secret storage path
 
 ## Email domain (alexanderssons.org)
-- Forward Email DNS records configured (MX, verification TXT, DKIM, DMARC, SPF, autoconfig/autodiscover; CNAMEs set to DNS-only).
-- Remaining: set up outbound sending path (SMTP/API credentials) for `al@alexanderssons.org` so mail can actually be sent from that address.
+- ✅ Fully working (2026-03-09): outbound via msmtp/ForwardEmail, inbound via IMAP (imap.forwardemail.net). Morning/evening inbox checks active.
 
 ## Notes
 - For any login-based service: prefer either

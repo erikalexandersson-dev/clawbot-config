@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Toppturer runt Sterzing</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  #map { height: 100vh; }
+  .legend {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 260px;
+  }
+  .legend h4 { margin: 0 0 8px; font-size: 14px; }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map').setView([46.94, 11.38], 11);
+
+L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenTopoMap | © OpenStreetMap',
+  maxZoom: 17
+}).addTo(map);
+
+const tours = [
+  {
+    name: "Sterzing / Vipiteno",
+    lat: 46.892, lon: 11.433,
+    color: "#333",
+    hm: null,
+    time: null,
+    note: "Utgångspunkt"
+  },
+  {
+    name: "Jaufental",
+    lat: 46.868, lon: 11.358,
+    color: "#2196F3",
+    hm: 824,
+    time: "2:30 h",
+    note: "Lätt att ta sig till. Bra halvdagstur."
+  },
+  {
+    name: "Ridnaun – Zunderspitze (2331 m)",
+    lat: 46.953, lon: 11.178,
+    color: "#4CAF50",
+    hm: 1005,
+    time: "2:55 h",
+    note: "Start vid Maiern, via Gewingesalm. Populär."
+  },
+  {
+    name: "Ridnaun – variant",
+    lat: 46.960, lon: 11.188,
+    color: "#8BC34A",
+    hm: 1019,
+    time: "2:55 h",
+    note: "Annan led i Ridnauntal."
+  },
+  {
+    name: "Stuls / Stulles (Ratschings)",
+    lat: 46.975, lon: 11.215,
+    color: "#FF9800",
+    hm: 1033,
+    time: "3:10 h",
+    note: "Lugnt och vackert."
+  },
+  {
+    name: "Stange – Ratschinger Kreuz (2326 m)",
+    lat: 46.982, lon: 11.228,
+    color: "#FF5722",
+    hm: 1213,
+    time: "3:51 h",
+    note: "Känt mål, rejäl tur."
+  },
+  {
+    name: "Pflersch / Pflerschtal",
+    lat: 47.015, lon: 11.388,
+    color: "#9C27B0",
+    hm: 1267,
+    time: "4:55 h",
+    note: "Dal mot Brenner. Heldag."
+  },
+  {
+    name: "Pfitsch / Val di Vizze",
+    lat: 46.930, lon: 11.618,
+    color: "#E91E63",
+    hm: 1266,
+    time: "3:58 h",
+    note: "Dal österut mot Österrike."
+  }
+];
+
+tours.forEach(t => {
+  const isBase = t.hm === null;
+  const icon = L.divIcon({
+    className: '',
+    html: `<div style="
+      background:${t.color};
+      width:${isBase ? 18 : 14}px;
+      height:${isBase ? 18 : 14}px;
+      border-radius:50%;
+      border:2px solid white;
+      box-shadow:0 1px 4px rgba(0,0,0,0.4);
+    "></div>`,
+    iconSize: [isBase ? 18 : 14, isBase ? 18 : 14],
+    iconAnchor: [isBase ? 9 : 7, isBase ? 9 : 7]
+  });
+
+  const popup = isBase
+    ? `<b>${t.name}</b>`
+    : `<b>${t.name}</b><br>
+       ⬆ ${t.hm} hm &nbsp;|&nbsp; ⏱ ${t.time}<br>
+       <i>${t.note}</i>`;
+
+  L.marker([t.lat, t.lon], {icon}).addTo(map).bindPopup(popup);
+});
+
+// Legend
+const legend = L.control({position: 'bottomright'});
+legend.onAdd = () => {
+  const div = L.DomUtil.create('div', 'legend');
+  div.innerHTML = '<h4>🎿 Toppturer – Sterzing</h4>' +
+    tours.map(t => `<div>
+      <span class="dot" style="background:${t.color}"></span>
+      <b>${t.name.split('(')[0].trim()}</b>
+      ${t.hm ? `<small>(${t.hm} hm, ${t.time})</small>` : ''}
+    </div>`).join('');
+  return div;
+};
+legend.addTo(map);
+</script>
+</body>
+</html>
