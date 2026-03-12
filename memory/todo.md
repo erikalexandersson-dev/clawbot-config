@@ -3,7 +3,6 @@
 Last updated: 2026-03-09 10:39 UTC
 
 | Todo | Prio | Notes (optional) |
-| Flyg München | 1 |  |
 | Flyg Oslo | 1 |  |
 | KSSS medlemskap | 1 |  |
 | Stegjärn | 1 |  |
