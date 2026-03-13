@@ -45,6 +45,7 @@ Sökta 2026-03-09. Alla är klassade medium difficulty.
 - **Stange (Ratschings / Ratschinger Kreuz, 2326 m)** – ~1213 hm, 3:51 h.
 - **Pflersch/Pflerschtal** – ~1267 hm, 4:55 h. Mot Brenner. Heldag.
 - **Pfitsch/Val di Vizze** – ~1266 hm, 3:58 h. Dal österut mot Österrike.
+- **Schlotterjoch (2373 m) via Flading, Ratschings** – ~860–880 hm, circuit. Start ~1517 m. GPX från outdooractive (id: 13395977). Populär och sceniskt fin. Källa: GPX skickad av Erik 2026-03-12.
 
 Källa: suedtirol.info + ratschings.info
 
