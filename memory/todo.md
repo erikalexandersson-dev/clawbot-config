@@ -1,14 +1,13 @@
 # TODO (Erik)
 
-Last updated: 2026-03-09 10:39 UTC
+Last updated: 2026-03-13 08:01 UTC
 
 | Todo | Prio | Notes (optional) |
-| Flyg Oslo | 1 |  |
 | KSSS medlemskap | 1 |  |
 | Stegjärn | 1 |  |
 | Köpa lavinkit | 3 |  |
 | Anton IsK! | 1 |  |
-| Kivra | 2 |  |
+| Kivra | 1 |  |
 | Viggen | 2 |  |
 | Uppsala aerobatic | 2 |  |
 | Tandblekning | 2 |  |
