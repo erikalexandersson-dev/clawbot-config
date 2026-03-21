@@ -4,7 +4,6 @@ Last updated: 2026-03-13 08:01 UTC
 
 | Todo | Prio | Notes (optional) |
 | KSSS medlemskap | 1 |  |
-| Stegjärn | 1 |  |
 | Köpa lavinkit | 3 |  |
 | Anton IsK! | 1 |  |
 | Kivra | 1 |  |
@@ -15,6 +14,7 @@ Last updated: 2026-03-13 08:01 UTC
 | Dubbelkolla att jag fått tillbaka för hyrbilen | 2 |  |
 | Köpa golfklubbor | 3 |  |
 | Boka VO2max-mätning med JP | 2 |  |
+| Sälj studsmatta | 2 |  |
 | Claude code plus github | 3 |  |
 | FFK | 3 |  |
 | Bältrosvaccin | 3 |  |
