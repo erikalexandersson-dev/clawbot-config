@@ -202,9 +202,9 @@
     ]
   },
   "lastChecks": {
-    "gmail_watch": 1774824000,
-    "gmail_watch_skip_reason": "oauth_expired_2026-03-29",
-    "al_inbox": 1774824000,
+    "gmail_watch": 1774867275,
+    "gmail_watch_skip_reason": "oauth_revoked_needs_reauth",
+    "al_inbox": 1774842000,
     "al_inbox_unseen": 0
   }
 }
