@@ -15,6 +15,9 @@ Last updated: 2026-03-13 08:01 UTC
 | Köpa golfklubbor | 3 |  |
 | Boka VO2max-mätning med JP | 2 |  |
 | Sälj studsmatta | 2 |  |
+| Thule-boxen (reparation på garanti) | 2 |  |
+| Sälja lilla cykeln | 2 |  |
+| Sälja torrdräkt | 2 |  |
 | Claude code plus github | 3 |  |
 | FFK | 3 |  |
 | Bältrosvaccin | 3 |  |
