@@ -73,30 +73,53 @@ def main() -> int:
         )
         return 1
 
-    daily = c.get_with_display_name(
-        "/wellness-service/wellness/dailySummaryChart/{display_name}?date={date}"
-        .replace("{date}", ds)
-    ) or []
+    def fetch_latest(fetcher, date_strings: list[str]):
+        for candidate in date_strings:
+            data = fetcher(candidate)
+            if data not in (None, {}, []):
+                return data, candidate
+        return None, None
 
-    sleep = c.get_with_display_name(
-        "/wellness-service/wellness/dailySleepData/{display_name}?date={date}".replace("{date}", ds)
-    ) or {}
+    candidates = [(d - timedelta(days=i)).isoformat() for i in range(0, 4)]
 
-    hr = c.get_with_display_name(
-        "/wellness-service/wellness/dailyHeartRate/{display_name}?date={date}".replace("{date}", ds)
-    ) or {}
+    daily, daily_date = fetch_latest(
+        lambda x: c.get_with_display_name(
+            "/wellness-service/wellness/dailySummaryChart/{display_name}?date={date}".replace("{date}", x)
+        ) or [],
+        candidates,
+    )
+    daily = daily or []
+
+    sleep, sleep_date = fetch_latest(
+        lambda x: c.get_with_display_name(
+            "/wellness-service/wellness/dailySleepData/{display_name}?date={date}".replace("{date}", x)
+        ) or {},
+        candidates,
+    )
+    sleep = sleep or {}
+
+    hr, hr_date = fetch_latest(
+        lambda x: c.get_with_display_name(
+            "/wellness-service/wellness/dailyHeartRate/{display_name}?date={date}".replace("{date}", x)
+        ) or {},
+        candidates,
+    )
+    hr = hr or {}
 
     # Stress/body battery endpoints on many accounts are date-based (no displayName).
-    stress = c._get(f"/wellness-service/wellness/dailyStress/{ds}") or {}
-    body_battery_events = c._get(f"/wellness-service/wellness/bodyBattery/events/{ds}") or []
+    stress, stress_date = fetch_latest(lambda x: c._get(f"/wellness-service/wellness/dailyStress/{x}") or {}, candidates)
+    stress = stress or {}
+    body_battery_events, bb_date = fetch_latest(lambda x: c._get(f"/wellness-service/wellness/bodyBattery/events/{x}") or [], candidates)
+    body_battery_events = body_battery_events or []
 
     # PulseOx endpoint availability differs across accounts/devices; fallback to sleep-level SpO2.
-    pulse_ox = c._get(f"/wellness-service/wellness/dailyPulseOx/{ds}") or {}
+    pulse_ox = {}
 
-    hrv = c._get(f"/wellness-service/wellness/hrvData?fromDate={week_ago}&toDate={ds}") or {}
+    hrv = {}
 
     # Training Readiness (Garmin Connect metrics service)
-    training_readiness = c._get(f"/metrics-service/metrics/trainingreadiness/{ds}") or []
+    training_readiness, tr_date = fetch_latest(lambda x: c._get(f"/metrics-service/metrics/trainingreadiness/{x}") or [], candidates)
+    training_readiness = training_readiness or []
 
     activities = c._get(
         f"/activitylist-service/activities/search/activities?start=0&limit={args.activities}"
@@ -136,6 +159,14 @@ def main() -> int:
 
     out = {
         "date": ds,
+        "source_dates": {
+            "daily": daily_date,
+            "sleep": sleep_date,
+            "heart_rate": hr_date,
+            "stress": stress_date,
+            "body_battery": bb_date,
+            "training_readiness": tr_date,
+        },
         "profile": {"display_name": c.display_name},
         "sleep": {
             "score": val(sleep, "sleepScores", "overall", "value") or val(sleep, "dailySleepDTO", "sleepScore"),
@@ -143,8 +174,8 @@ def main() -> int:
             "deep_sec": val(sleep, "dailySleepDTO", "deepSleepSeconds"),
             "light_sec": val(sleep, "dailySleepDTO", "lightSleepSeconds"),
             "rem_sec": val(sleep, "dailySleepDTO", "remSleepSeconds"),
-            "avg_hr": val(sleep, "dailySleepDTO", "avgSleepHr"),
-            "spo2_avg": val(sleep, "dailySleepDTO", "averageSpO2"),
+            "avg_hr": val(sleep, "dailySleepDTO", "avgSleepHr") or val(sleep, "dailySleepDTO", "avgHeartRate"),
+            "spo2_avg": val(sleep, "dailySleepDTO", "averageSpO2") or val(sleep, "dailySleepDTO", "averageSpO2Value"),
             "stress_avg": val(sleep, "dailySleepDTO", "avgSleepStress"),
         },
         "heart_rate": {
@@ -153,9 +184,9 @@ def main() -> int:
             "max": val(hr, "maxHeartRate"),
         },
         "hrv": {
-            "status": val(hrv, "status") or val(sleep, "hrvStatus"),
+            "status": val(hrv, "status") or val(sleep, "hrvStatus") or val(training_readiness[0], "hrvFactorFeedback") if isinstance(training_readiness, list) and training_readiness else None,
             "last_night_avg": val(hrv, "lastNightAvg") or val(sleep, "avgOvernightHrv"),
-            "weekly_avg": val(hrv, "weeklyAvg"),
+            "weekly_avg": val(hrv, "weeklyAvg") or val(training_readiness[0], "hrvWeeklyAverage") if isinstance(training_readiness, list) and training_readiness else None,
         },
         "training_readiness": {
             "score": val(training_readiness[0], "score") if isinstance(training_readiness, list) and training_readiness else None,
@@ -170,8 +201,8 @@ def main() -> int:
         },
         "steps": total_steps,
         "spo2": {
-            "avg": val(pulse_ox, "averageSpO2"),
-            "lowest": val(pulse_ox, "lowestSpO2"),
+            "avg": val(pulse_ox, "averageSpO2") or val(sleep, "dailySleepDTO", "averageSpO2Value"),
+            "lowest": val(pulse_ox, "lowestSpO2") or val(sleep, "dailySleepDTO", "lowestSpO2Value"),
         },
         "body_battery": {
             "charged": bb_impact,
