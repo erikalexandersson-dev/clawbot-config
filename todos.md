@@ -1,8 +1,6 @@
 # TODOs
 
 ## Prio 1
-- KSSS medlemskap
-- Kivra
 
 ## Prio 2
 - Viggen
