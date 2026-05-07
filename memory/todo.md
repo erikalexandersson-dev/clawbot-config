@@ -1,22 +1,22 @@
 # TODO (Erik)
 
-Last updated: 2026-03-13 08:01 UTC
+Last updated: 2026-05-07 07:25 UTC
 
 | Todo | Prio | Notes (optional) |
-| KSSS medlemskap | 1 |  |
+| insulin | 1 |  |
+| sensorer | 1 |  |
+| återköp | 1 |  |
+| köpa mtb | 1 |  |
+| mixmiddag | 2 |  |
 | Köpa lavinkit | 3 |  |
-| Anton IsK! | 1 |  |
-| Kivra | 1 |  |
 | Viggen | 2 |  |
 | Uppsala aerobatic | 2 |  |
 | Tandblekning | 2 |  |
-| Bygga bollgrej | 2 |  |
-| Dubbelkolla att jag fått tillbaka för hyrbilen | 2 |  |
+| Bygga bollgrej | 3 |  |
 | Köpa golfklubbor | 3 |  |
 | Boka VO2max-mätning med JP | 2 |  |
 | Sälj studsmatta | 2 |  |
 | Thule-boxen (reparation på garanti) | 2 |  |
-| Sälja lilla cykeln | 2 |  |
 | Sälja torrdräkt | 2 |  |
 | Claude code plus github | 3 |  |
 | FFK | 3 |  |
