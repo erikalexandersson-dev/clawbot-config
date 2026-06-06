@@ -18,6 +18,12 @@
     ]
   },
   "lastChecks": {
-    "gmail_watch": 1780698894
+    "gmail_watch": 1780785294
+  },
+  "lastErrors": {
+    "gmail_watch": {
+      "at": 1780785294,
+      "error": "oauth2: invalid_grant"
+    }
   }
 }
